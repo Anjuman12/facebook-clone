@@ -1,5 +1,11 @@
-const express = require('express')
+const express = require('express');
 
 const router = express.Router();
-console.log("router loaded")
+
+const homeController = require('../controllers/homeController');
+// const userController = require('../controllers/userController');
+
+// console.log("Router loaded");
+router.get('/',homeController.home)
+router.use('/users',require('./users'))
 module.exports = router;
